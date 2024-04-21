@@ -65,6 +65,17 @@ nav a {
   font-weight: 600;
   text-decoration: none;
 }
+
+.container {
+  display: flex;
+  max-width: 1440px;
+  margin: auto;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0px;
+}
+
 .home-title .home-image-container {
   position: relative;
   display: flex;
@@ -216,6 +227,9 @@ nav a {
 .icon-content-list>.recomendaciones {
   list-style-type: '⭐';
 }
+.no-icon {
+  list-style-type: none !important;
+}
 .home-page {
   display: flex;
   flex-direction: column;
@@ -296,7 +310,6 @@ nav a {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   color: #fff;
   background-color: rgba(0, 0, 0, 0.3);
-  font-family: var(--primary--family);
 }
 .basic-card:hover {
   &>.overlay {
@@ -434,7 +447,20 @@ footer ul>li {
 /* ABOUT PAGE */
 
 .about-main {
-  padding: 100px 0px;;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 100px 0px;
+  &>.content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+.about-main>.contact {
+  padding: 20px 40px;
+  border-radius: 20px;
+  background: var(--primary-background);
 }
 
 /* CONTACTO */
@@ -613,12 +639,9 @@ tr:hover {
   margin: auto;
   &>article, h2, ol {
     width: 100%;
+    line-height: 2;
     margin: auto;
     max-width: 1440px;
-  };
-  &>ol {
-    line-height: 2;
-    width: 100%
   };
 }
 #recomendaciones {
@@ -652,6 +675,7 @@ tr:hover {
   max-width: 1440px;
 }
 #destino-imagen {
+  border-radius: 20px;
   aspect-ratio: cover;
   transform: translateY(-110px);
   bottom: 0px;
